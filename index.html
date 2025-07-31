@@ -139,7 +139,7 @@
         <div class="team-grid">
           <div class="card">
             <img
-              src="professionalheadshot copy.PNG"
+              src="assets/images/professionalheadshot copy.PNG"
               alt="Program Director"
               class="team-photo"
             />
@@ -279,9 +279,9 @@
       <section id="gallery">
         <h2>GALLERY</h2>
         <div class="media-grid">
-          <img src="IMG_0070.jpg" alt="action photo 1" class="media-item" />
-          <img src="IMG_0072.jpg" alt="action photo 2" class="media-item" />
-          <img src="IMG_0074.jpg" alt="action photo 3" class="media-item" />
+          <img src="assets/images/IMG_0070.jpg" alt="action photo 1" class="media-item" />
+          <img src="assets/images/IMG_0072.jpg" alt="action photo 2" class="media-item" />
+          <img src="assets/images/IMG_0074.jpg" alt="action photo 3" class="media-item" />
         </div>
       </section>
 
@@ -364,7 +364,7 @@
   href="https://www.instagram.com/northeast_bucket_getters"
   target="_blank"
   aria-label="Follow us on Instagram"
->
+  >
   <img
     src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
     alt="Instagram"
@@ -379,10 +379,29 @@
     </footer>
 
     <script>
+      const header = document.querySelector("header");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
+
+    <script>
       const hamburger = document.getElementById("hamburger");
       const navMenu = document.getElementById("nav-menu");
+      const navLinks = document.querySelectorAll("nav-menu a");
+
       hamburger.addEventListener("click", () => {
         navMenu.classList.toggle("show");
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("show");
+        });
       });
     </script>
     <script>

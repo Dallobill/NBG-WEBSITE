@@ -29,6 +29,11 @@
     z-index: 1000;
     text-align: center;
   }
+
+  header.scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+  }
   
   header img {
     width: 150px;
@@ -564,5 +569,26 @@
       color: var(--dark);
       display: block;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    .hamburger span {
+      transition: all 0.3s ease;
+    }
+    
   }
   
